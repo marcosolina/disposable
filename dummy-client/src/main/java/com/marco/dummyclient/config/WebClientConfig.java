@@ -30,7 +30,7 @@ public class WebClientConfig {
 		 */
 		ClientRegistration clientRegistration = ClientRegistration
 				.withRegistrationId("marcoclient")
-				.clientId("client-client").clientSecret("b7a84003-d72d-40d1-a804-401cb899629e")
+				.clientId("client-client").clientSecret("bace9a2f-d659-45b0-8170-5b40c7f5e600")
 				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
 				.clientAuthenticationMethod(ClientAuthenticationMethod.POST)
 				.tokenUri("http://localhost:8091/auth/realms/test-realm/protocol/openid-connect/token")
