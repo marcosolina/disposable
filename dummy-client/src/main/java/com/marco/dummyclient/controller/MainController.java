@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 
 
 @RestController
-@RequestMapping(path = "/api/employees")
+@RequestMapping(path = "/api/client")
 public class MainController {
 	
 	@Autowired
@@ -29,7 +29,7 @@ public class MainController {
         .attributes(ServerOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId("marcoclient"))
         .accept(MediaType.APPLICATION_STREAM_JSON)
         .retrieve()
-        .bodyToMono(String.class);
+        .bodyToMono(String.class).map(s -> "Hello from the client\n" + s);
 		return new ResponseEntity<Mono<String>>(mono, HttpStatus.OK);
     }
 
