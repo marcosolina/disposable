@@ -32,10 +32,12 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
+		<!-- START per generare il token da usare quando chiamo un alto client -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-client</artifactId>
 		</dependency>
+		<!-- END per generare il token da usare quando chiamo un alto client -->
 
 
 		<dependency>

@@ -22,6 +22,9 @@ public class MainController {
 	@GetMapping()
     public ResponseEntity<Mono<String>> getEmployeeAndDepartment() {
 	
+		/*
+		 * Calling another microservice using the Oauth Credential defined for the "marcosuper" cliet 
+		 */
 		Mono<String> mono = webClient.get()
         .uri("http://localhost:8090/api/client/1")
         .attributes(ServerOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId("marcosuper"))

@@ -14,6 +14,10 @@ public class CustomRealmRoleConverter implements Converter<Jwt, Collection<Grant
 
 	@SuppressWarnings("unchecked")
 	public Collection<GrantedAuthority> convert(final Jwt jwt) {
+		/*
+		 * Extracting the roles from the TOKEN
+		 * TODO see if there is a better way to do this
+		 */
 		Map<String, Object> resource_access = (Map<String, Object>) jwt.getClaims().get("resource_access");
 		Map<String, Object> thisAppRoles = (Map<String, Object>) resource_access.get("client-callee");
 		List<String> roles = (List<String>) thisAppRoles.get("roles");

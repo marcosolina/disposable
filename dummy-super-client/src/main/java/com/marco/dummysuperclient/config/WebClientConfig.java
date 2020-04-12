@@ -25,6 +25,9 @@ public class WebClientConfig {
 
 	@Bean
 	public ClientRegistrationRepository clientRegistrations() {
+		/*
+		 * Registering the "client" credential to use when I want to retrieve the token
+		 */
 		ClientRegistration clientRegistration = ClientRegistration
 				.withRegistrationId("marcosuper")
 				.clientId("client-super").clientSecret("59f5a707-8db5-438f-94ed-e030533fb9ad")
@@ -33,6 +36,7 @@ public class WebClientConfig {
 				.tokenUri("http://localhost:8091/auth/realms/test-realm/protocol/openid-connect/token")
 				.build();
 
+		//TODO retrieve from a database
 		return new InMemoryClientRegistrationRepository(clientRegistration);
 	}
 	

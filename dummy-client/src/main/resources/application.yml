@@ -1,6 +1,7 @@
 server:
   port: 8090
 
+# Where to go to check the incoming token
 spring:
   security:
     oauth2:

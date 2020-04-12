@@ -29,6 +29,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- START Per leggere un token in ingresso -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-jose</artifactId>
@@ -37,6 +38,7 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-oauth2-resource-server</artifactId>
 		</dependency>
+		<!-- END Per leggere un token in ingresso -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

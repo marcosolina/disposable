@@ -16,12 +16,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
+		/*
+		 * Standard spring security
+		 */
 		http.sessionManagement()
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and().authorizeRequests()
 			.antMatchers("/api/callee/**").hasAnyRole("READ_CALLEE")
 			.anyRequest().authenticated()
 			.and()
+			/*
+			 * Telling that this is a resource server, so I will receive a token
+			 * that needs to be checked
+			 */
 			.oauth2ResourceServer()
 			.jwt()
 			.jwtAuthenticationConverter(jwtConverter);
