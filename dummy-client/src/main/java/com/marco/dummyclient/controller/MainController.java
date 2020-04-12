@@ -25,7 +25,7 @@ public class MainController {
     public ResponseEntity<Mono<String>> getEmployeeAndDepartment() {
 	
 		Mono<String> mono = webClient.get()
-        .uri("http://localhost:8095/api/departments/1")
+        .uri("http://localhost:8095/api/callee/")
         .attributes(ServerOAuth2AuthorizedClientExchangeFilterFunction.clientRegistrationId("marcoclient"))
         .accept(MediaType.APPLICATION_STREAM_JSON)
         .retrieve()
